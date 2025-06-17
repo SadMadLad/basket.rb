@@ -56,9 +56,9 @@ class Basket
     items_tally = {}
 
     @items.each do |item|
-      offer_found = @offers.find { |offer_name, _| offer_name.to_s.include?(item.to_s) }&.first
+      offer_found, offer_lambda = @offers.find { |offer_name, _| offer_name.to_s.include?(item.to_s) }
       total += if !items_tally[item].nil? && offer_found
-                 @offers[offer_found].call(
+                 offer_lambda.call(
                    @products[item][:price],
                    items_tally[item]
                  )
