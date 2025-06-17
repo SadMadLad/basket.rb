@@ -4,7 +4,6 @@ require 'pry'
 
 # Class containing the implementation of the basket
 class Basket
-  # :nodoc:
   DEFAULT_PRODUCTS = {
     R01: { name: 'Red Widget', price: 32.95 },
     G01: { name: 'Green Widget', price: 24.95 },
