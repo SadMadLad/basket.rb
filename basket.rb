@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry'
-
 # Class containing the implementation of the basket
 class Basket
   DEFAULT_PRODUCTS = {
