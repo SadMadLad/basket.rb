@@ -42,7 +42,9 @@ class Basket
   #   - <tt>item_code: [Symbol, String]:</tt> Product Code
   # - returns the current items array
   def add(item_code)
-    if @products[item_code.to_sym].nil?
+    item_code = item_code.to_sym if item_code.is_a?(String)
+
+    if @products[item_code].nil?
       raise ArgumentError, "Not a valid product code. Available codes: #{@products.keys.map(&:to_s).join(',')}"
     end
 
@@ -110,7 +112,8 @@ def main
     %i[B01 G01],
     %i[R01 R01],
     %i[R01 G01],
-    %i[B01 B01 R01 R01 R01]
+    %i[B01 B01 R01 R01 R01],
+    'B01, R01, G01'
   ].each do |items|
     basket = Basket.initialize_with_items(items)
 
