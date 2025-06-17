@@ -63,7 +63,7 @@ class Basket
                    items_tally[item]
                  )
                else
-                 @products[item][:price]
+                 @products.dig(item, :price)
                end
 
       items_tally[item] = items_tally[item].nil? ? 1 : items_tally[item] + 1
