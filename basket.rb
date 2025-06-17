@@ -111,7 +111,8 @@ def main
     %i[R01 R01],
     %i[R01 G01],
     %i[B01 B01 R01 R01 R01],
-    'B01, R01, G01'
+    'B01, R01, G01',
+    []
   ].each do |items|
     basket = Basket.initialize_with_items(items)
 
